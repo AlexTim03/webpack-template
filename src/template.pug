@@ -6,6 +6,10 @@ html(lang= 'ru')
     body
         p Файл откомпилирован шаблонизатором Pug
         .logo-png
+            div Загрузка PNG изображений с помощью Webpack:
             img.logo1(src=require('./images/mu.png') alt='Загрузка PNG изображений с помощью Webpack')
         .logo-svg
+            div Загрузка SVG изображений с помощью Webpack:
             img.logo2(src=require('./images/bike.svg'), alt='Загрузка SVG изображений с помощью Webpack')
+
+        #root

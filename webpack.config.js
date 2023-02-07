@@ -15,6 +15,11 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                use: 'babel-loader',
+                exclude: /node_modules/,
+            },
+            {
                 test: /\.pug$/,
                 loader: 'pug-loader',
             },
@@ -50,13 +55,14 @@ module.exports = {
             //filename - имя выходного файла
             filename: 'index.html',
         }),
-        //очистка dist перед обновлением генерацией файлов
         new FileManagerPlugin({
             events: {
                 onStart: {
+                    //очистка dist перед обновлением генерацией файлов
                     delete: ['dist']
                 },
                 onEnd: {
+                    //копируем статические файлы
                     copy: [{
                         source: path.join('src', 'static'),
                         destination: 'dist',
