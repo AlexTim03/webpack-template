@@ -1,2 +1,3 @@
 # webpack-template
-webpack5 template
+
+Настройка webpack 5
